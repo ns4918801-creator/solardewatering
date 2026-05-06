@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaClear | Diagnostics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        
+        .card-inner {
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+        
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .problem-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card-back-content::-webkit-scrollbar, .card-front-content::-webkit-scrollbar { width: 6px; }
+        .card-back-content::-webkit-scrollbar-thumb, .card-front-content::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans antialiased">
+
+    <nav class="bg-white shadow-md py-4 px-6 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-700">AquaClear Solar</div>
+            <ul class="flex space-x-6 text-sm font-medium text-gray-600">
+                <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
+                <li><a href="diagnostics.html" class="text-blue-600 font-bold transition">Diagnostics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-8 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Interactive Diagnostics</h1>
+            <p class="text-lg text-gray-600">Touch any problem card below to flip it over and reveal detailed, actionable engineering solutions.</p>
+        </div>
+    </section>
+
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
+                        <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
+                            <img src="https://images.pexels.com/photos/159397/solar-panel-array-power-sun-electricity-159397.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Solar Farm Stagnation" class="problem-img">
+                            <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">1. Capillary Stagnation</h3>
+                            <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
+                                <p class="text-sm text-gray-600">
+                                    Capillary stagnation occurs when rainwater or morning dew accumulates at the lower aluminum frame edge of a solar panel and stubbornly refuses to drain due to strong surface tension. This standing water creates a persistent micro-environment that completely blocks vital sunlight from reaching the crucial lower solar cells, leading to immediate and localized power generation loss. Over time, this trapped moisture slowly penetrates the panel's delicate weather seals, creating a severe risk of internal delamination and electrical corrosion. Furthermore, the continuous presence of this stagnant water acts as a powerful magnet for atmospheric dust, accelerating the long-term degradation of the glass.
+                                </p>
+                            </div>
+                            <div class="mt-auto text-blue-600 font-semibold text-sm w-full text-left flex items-center pt-2 border-t border-gray-100">
+                                <span>Touch to view solution</span> <span class="ml-2 text-xl">↻</span>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-slate-800 text-white rounded-2xl p-6 flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-400 border-b border-gray-600 pb-2 text-left">Solution: Drainage Clips</h3>
+                            <div class="card-back-content overflow-y-auto text-left flex-grow pr-2">
+                                <p class="text-sm leading-relaxed mb-4 text-gray-300">
+                                    The most effective and immediate engineering countermeasure for capillary stagnation is the installation of hydrophilic polymer drainage clips along the lower edge of the affected solar panels. These specially engineered clips function by mechanically breaking the strong surface tension of the pooled water, creating a continuous capillary channel that directs the moisture up and over the aluminum frame lip. By facilitating active drainage, the clips ensure that water flows off the glass immediately after rain or morning dew, leaving the lower edge completely dry. To implement this solution, field technicians should snap on 35mm diversion clips at 20-centimeter intervals along the bottom frame. It is crucial to use UV-resistant, high-grade polymer clips to prevent premature degradation from intense sun exposure. Furthermore, routine maintenance schedules must be updated to include visual inspections of these clips every quarter. Dust and debris can eventually clog the capillary channels, rendering them ineffective. Technicians should flush the clips with deionized water during standard washing cycles to maintain optimal drainage performance. Implementing this low-cost hardware modification can restore up to 15% of lost energy yield in arrays suffering from severe stagnation, while drastically extending the lifespan of the panel's edge seals.
+                                </p>
+                            </div>
+                            <code class="bg-black text-green-400 p-3 rounded text-xs w-full text-left border-l-4 border-green-500 mt-4 block">Action Code: INST-CLIP-35MM-Q1</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
+                        <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
+                            <img src="https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dusty Solar Panel" class="problem-img">
+                            <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">2. Dust Caking</h3>
+                            <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
+                                <p class="text-sm text-gray-600">
+                                    Dust caking, frequently referred to as mud ribbons, develops rapidly when airborne particulate matter mixes with the stagnant water pooled at the bottom edge of your solar array. As the intense sun heats the panel and the water evaporates, it bakes the trapped dirt into a dense, hardened layer of mud. This thick, opaque ribbon completely obstructs sunlight from reaching the lower diode strings, causing severe thermal stress and dangerous localized hot spots that can permanently damage the module. Additionally, the highly abrasive nature of this baked-on clay causes permanent micro-scratches on the anti-reflective glass coating during dry, high-wind conditions.
+                                </p>
+                            </div>
+                            <div class="mt-auto text-blue-600 font-semibold text-sm w-full text-left flex items-center pt-2 border-t border-gray-100">
+                                <span>Touch to view solution</span> <span class="ml-2 text-xl">↻</span>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-slate-800 text-white rounded-2xl p-6 flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-400 border-b border-gray-600 pb-2 text-left">Solution: Tilt & Brush</h3>
+                            <div class="card-back-content overflow-y-auto text-left flex-grow pr-2">
+                                <p class="text-sm leading-relaxed mb-4 text-gray-300">
+                                    Mitigating the formation of dense mud ribbons requires a comprehensive, multi-tiered approach combining structural adjustments with automated mechanical cleaning. The first step involves evaluating and modifying the structural mounting of the solar array. Whenever feasible, engineers should increase the panel tilt angle by a minimum of five degrees. This steeper incline leverages gravity to naturally accelerate water runoff, leaving less time for dust to settle and mix with standing water. If structural modification is impossible, the deployment of automated, waterless dry-brushing robotic systems becomes absolutely essential. These robots should be programmed to traverse the array on a bi-weekly schedule, sweeping away loose particulate matter before rain or dew can turn it into mud. In scenarios where severe caking has already occurred, dry brushing alone will fail. A highly supervised manual wet wash using pure deionized water and soft-bristle rotary brushes must be executed to break down the hardened clay deposits without damaging the glass. Once the panels are restored to a pristine state, the automated dry-brushing regimen can maintain them. Combining optimized tilt dynamics with frequent, automated dust removal prevents the chemical binding of soil and water, preserving optimal irradiance levels and preventing thermal runaway.
+                                </p>
+                            </div>
+                            <code class="bg-black text-green-400 p-3 rounded text-xs w-full text-left border-l-4 border-green-500 mt-4 block">Action Code: TILT-ADJ-5D / BRUSH-WKLY</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
+                        <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
+                            <img src="https://images.pexels.com/photos/9875679/pexels-photo-9875679.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Algae Environment" class="problem-img">
+                            <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">3. Algae & Lichen</h3>
+                            <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
+                                <p class="text-sm text-gray-600">
+                                    In humid climates or agricultural environments, the persistent moisture trapped by capillary stagnation provides the perfect breeding ground for aggressive biological fouling, including algae, lichen, and stubborn fungal spores. These microscopic organisms attach firmly to the porous texture of the solar glass, multiplying rapidly to create expanding green or black patches. This thick organic growth acts as a severe biological shading mechanism, heavily absorbing sunlight before it can reach the photovoltaic cells. As the microscopic roots of the lichen penetrate the anti-reflective coating, they release mild organic acids that permanently etch and destroy the surface integrity of the expensive panel.
+                                </p>
+                            </div>
+                            <div class="mt-auto text-blue-600 font-semibold text-sm w-full text-left flex items-center pt-2 border-t border-gray-100">
+                                <span>Touch to view solution</span> <span class="ml-2 text-xl">↻</span>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-slate-800 text-white rounded-2xl p-6 flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-400 border-b border-gray-600 pb-2 text-left">Solution: Photocatalytic Coating</h3>
+                            <div class="card-back-content overflow-y-auto text-left flex-grow pr-2">
+                                <p class="text-sm leading-relaxed mb-4 text-gray-300">
+                                    Eradicating and preventing the return of algae, lichen, and other biological fouling requires advanced surface chemistry interventions combined with physical moisture control. The primary defense mechanism is the application of a high-performance, transparent anti-microbial coating utilizing titanium dioxide (TiO2) nanoparticles. When this advanced photocatalytic layer is exposed to natural ultraviolet sunlight, it generates reactive oxygen species that actively break down the cellular walls of organic matter, effectively incinerating algae and spores at a microscopic level. This self-cleaning process prevents biological organisms from securing a foothold on the glass. Before applying the TiO2 coating, technicians must perform a deep chemical clean using highly diluted, environmentally safe biocides to remove all existing root structures. Simple pressure washing is insufficient, as surviving microscopic spores will quickly regenerate. In conjunction with the photocatalytic coating, the root cause of the moisture—capillary stagnation—must be eliminated by retrofitting the array with water-channeling edge clips. By combining an inhospitable, self-sterilizing glass surface with rapid mechanical dewatering, facility managers can permanently eliminate biological shading. This dual-action protocol guarantees that even in tropical environments, the modules remain crystal clear.
+                                </p>
+                            </div>
+                            <code class="bg-black text-green-400 p-3 rounded text-xs w-full text-left border-l-4 border-green-500 mt-4 block">Action Code: COAT-TIO2-AM</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
+                        <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
+                            <img src="https://images.pexels.com/photos/2101137/pexels-photo-2101137.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water Stains on Glass" class="problem-img">
+                            <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">4. Mineral Scaling</h3>
+                            <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
+                                <p class="text-sm text-gray-600">
+                                    Mineral scaling forms a critical optical barrier caused by the repeated evaporation of hard, mineral-rich water on the delicate panel surface. When natural rainwater mixed with atmospheric dust, or improper well water used during cleaning, pools and evaporates, it leaves behind incredibly dense deposits of calcium, magnesium, and silica. These crystalline formations bond intensely to the glass at a molecular level, creating opaque, milky-white stains that severely reflect and scatter incoming solar radiation. If left entirely untreated, this aggressive silica scaling can become chemically fused with the glass, resulting in irreversible optical degradation, massive energy yield deficits, and permanent damage.
+                                </p>
+                            </div>
+                            <div class="mt-auto text-blue-600 font-semibold text-sm w-full text-left flex items-center pt-2 border-t border-gray-100">
+                                <span>Touch to view solution</span> <span class="ml-2 text-xl">↻</span>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-slate-800 text-white rounded-2xl p-6 flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-400 border-b border-gray-600 pb-2 text-left">Solution: RO Wash & Active Drain</h3>
+                            <div class="card-back-content overflow-y-auto text-left flex-grow pr-2">
+                                <p class="text-sm leading-relaxed mb-4 text-gray-300">
+                                    Addressing severe mineral scaling demands strict adherence to ultra-pure water protocols and specialized chemical remediation. Once calcium, magnesium, or silica scaling has heavily bonded to the solar glass, standard washing techniques are entirely useless and abrasive scrubbing will permanently scratch the module. Field technicians must utilize a specialized, mild acidic cleaning solution—typically a carefully buffered citric or acetic acid blend—to safely dissolve the alkaline mineral lattice without compromising the aluminum framing or silicone weather seals. This chemical wash must be followed immediately by a high-volume flush. Moving forward, the facility must completely ban the use of untreated municipal tap water or local well water for maintenance cleaning. All washing operations must exclusively utilize reverse osmosis (RO) or completely deionized (DI) water. RO/DI water is completely stripped of dissolved solids, meaning it acts as a hungry solvent that cleans effectively and leaves absolutely zero residue upon evaporation. To prevent natural rainwater scaling, the array must be fitted with active dewatering clips to physically drain the water off the panel before the sun can evaporate it. Maintaining a zero-mineral environment ensures maximum light transmittance and safeguards the expensive anti-reflective coating.
+                                </p>
+                            </div>
+                            <code class="bg-black text-green-400 p-3 rounded text-xs w-full text-left border-l-4 border-green-500 mt-4 block">Action Code: WASH-RO-DI-MNT</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
+                        <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
+                            <img src="https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Birds near Solar Field" class="problem-img">
+                            <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">5. Acidic Pooling (Avian)</h3>
+                            <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
+                                <p class="text-sm text-gray-600">
+                                    Avian activity around solar fields introduces one of the most chemically destructive and rapid forms of soiling possible. When highly acidic bird droppings land near the lower frame and mix with stagnant edge-water, they form concentrated, highly corrosive micro-pools. This toxic biological mixture acts as a severe localized shading event, forcing the underlying solar cells to consume power rather than generate it, creating dangerous thermal hot spots. Furthermore, the extreme acidity aggressively attacks the module's delicate anti-reflective coating, rapidly and chemically etching the glass surface, causing permanent, unrepairable frosting that blocks essential light transmittance indefinitely and ruins the module.
+                                </p>
+                            </div>
+                            <div class="mt-auto text-blue-600 font-semibold text-sm w-full text-left flex items-center pt-2 border-t border-gray-100">
+                                <span>Touch to view solution</span> <span class="ml-2 text-xl">↻</span>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-slate-800 text-white rounded-2xl p-6 flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-400 border-b border-gray-600 pb-2 text-left">Solution: Enzymatic Wash & Deterrent</h3>
+                            <div class="card-back-content overflow-y-auto text-left flex-grow pr-2">
+                                <p class="text-sm leading-relaxed mb-4 text-gray-300">
+                                    Neutralizing the threat of highly acidic avian soiling requires a rapid response cleaning protocol paired with robust, multi-layered deterrent systems. Because uric acid chemically etches glass within days, passive monitoring is insufficient. Maintenance teams must execute targeted, localized cleaning of avian droppings immediately upon detection. This cleaning must be performed using a specialized enzymatic solar wash that is specifically formulated to break down dense biological proteins and safely neutralize extreme acidity without stripping the panel's protective coatings. Technicians must use soft, non-abrasive microfiber mops to gently lift the guano, avoiding dragging the hard particulate matter across the glass. To drastically reduce the frequency of these incidents, aggressive avian deterrents must be installed across the solar farm infrastructure. Visual and auditory deterrents, such as randomized reflective laser spinners and programmable ultrasonic bio-acoustic emitters, should be strategically placed to disrupt flight patterns and nesting behaviors. Additionally, physical deterrents like polycarbonate bird spikes must be installed on all surrounding light poles, weather stations, and inverter housings to eliminate convenient roosting perches. By neutralizing the acid quickly with cleaners and modifying the environment to repel avian wildlife, operators can prevent permanent glass degradation and localized cell failure.
+                                </p>
+                            </div>
+                            <code class="bg-black text-green-400 p-3 rounded text-xs w-full text-left border-l-4 border-green-500 mt-4 block">Action Code: CLEAN-ENZ / DETER-AVN</code>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center mt-10">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-xl font-semibold text-white mb-2">AquaClear Engineering Support</h2>
+            <p class="mb-4 text-sm">Deploying correct Action Codes ensures maximum solar yield and longevity.</p>
+            <p class="text-xs">&copy; 2026 AquaClear Solar Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

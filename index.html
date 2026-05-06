@@ -30,6 +30,25 @@
 
         .card-back-content::-webkit-scrollbar, .card-front-content::-webkit-scrollbar { width: 6px; }
         .card-back-content::-webkit-scrollbar-thumb, .card-front-content::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 10px; }
+
+        @keyframes slideInTitle {
+            0% { opacity: 0; transform: translateX(-80px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInSubtitle {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-title {
+            animation: slideInTitle 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-subtitle {
+            opacity: 0;
+            animation: slideInSubtitle 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans antialiased">
@@ -44,10 +63,10 @@
         </div>
     </nav>
 
-    <section id="home" class="pt-32 pb-16 px-6 text-center bg-gradient-to-b from-blue-100 to-gray-100">
+    <section id="home" class="pt-32 pb-16 px-6 text-center bg-gradient-to-b from-blue-100 to-gray-100 overflow-hidden">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Advanced Solar Dewatering Diagnostics</h1>
-            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            <h1 class="animate-title text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Advanced Solar Dewatering Diagnostics</h1>
+            <p class="animate-subtitle text-lg text-gray-600 mb-8 leading-relaxed">
                 Water pooling at the lower edge of solar panels causes hot spots, permanent glass etching, and severe power loss. Touch any problem card below to view the visual and flip it over to reveal detailed, actionable engineering solutions.
             </p>
         </div>
@@ -61,7 +80,7 @@
                 <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
                     <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
                         <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
-                            <img src="https://images.unsplash.com/photo-1509391366360-1e97f52ce23b?auto=format&fit=crop&w=600&q=80" alt="Solar Farm Stagnation" class="problem-img">
+                            <img src="https://images.pexels.com/photos/159397/solar-panel-array-power-sun-electricity-159397.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Solar Farm Stagnation" class="problem-img">
                             <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">1. Capillary Stagnation</h3>
                             <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
                                 <p class="text-sm text-gray-600">
@@ -87,7 +106,7 @@
                 <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
                     <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
                         <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
-                            <img src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=600&q=80" alt="Dusty Solar Panel" class="problem-img">
+                            <img src="https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dusty Solar Panel" class="problem-img">
                             <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">2. Dust Caking</h3>
                             <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
                                 <p class="text-sm text-gray-600">
@@ -113,7 +132,7 @@
                 <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
                     <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
                         <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
-                            <img src="https://images.unsplash.com/photo-1548611716-3001aa0abdb0?auto=format&fit=crop&w=600&q=80" alt="Algae Environment" class="problem-img">
+                            <img src="https://images.pexels.com/photos/9875679/pexels-photo-9875679.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Algae Environment" class="problem-img">
                             <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">3. Algae & Lichen</h3>
                             <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
                                 <p class="text-sm text-gray-600">
@@ -139,7 +158,7 @@
                 <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
                     <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
                         <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
-                            <img src="https://images.unsplash.com/photo-1515594833215-685cb524d775?auto=format&fit=crop&w=600&q=80" alt="Water Stains on Glass" class="problem-img">
+                            <img src="https://images.pexels.com/photos/2101137/pexels-photo-2101137.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water Stains on Glass" class="problem-img">
                             <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">4. Mineral Scaling</h3>
                             <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
                                 <p class="text-sm text-gray-600">
@@ -165,7 +184,7 @@
                 <div class="card perspective-1000 w-full h-[600px] cursor-pointer" onclick="this.classList.toggle('flipped')">
                     <div class="card-inner relative w-full h-full transform-style-3d shadow-2xl rounded-2xl">
                         <div class="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-start items-center">
-                            <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6f?auto=format&fit=crop&w=600&q=80" alt="Birds near Solar Field" class="problem-img">
+                            <img src="https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Birds near Solar Field" class="problem-img">
                             <h3 class="text-2xl font-bold text-gray-800 w-full text-left mb-2">5. Acidic Pooling (Avian)</h3>
                             <div class="card-front-content overflow-y-auto text-left w-full mb-4 pr-2">
                                 <p class="text-sm text-gray-600">
